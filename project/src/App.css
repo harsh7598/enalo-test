@@ -1,0 +1,98 @@
+.booking-form-container{
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.appointment-heading{
+  text-align: center;
+  margin-bottom: 20px;
+}
+.responsive-heading{
+  text-align: center;
+  line-height: 1.2;
+  color: #333;
+}
+
+@media (max-width: 768px){
+  .responsive-heading{
+    display:none
+  }
+}
+
+.booking-form{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.form-group{
+  flex: 1 1 calc(50% - 15px);
+  display: flex;
+  flex-direction: column;
+}
+.form-group:nth-child(2n){
+  margin-right: 0;
+}
+.form-group label{
+  display: none;
+}
+.form-group input, .form-group select{
+  padding: 10px;
+  font-size: 16px;
+}
+
+.textarea-group{
+  flex: 1 1 96%;
+}
+
+.textarea-group textarea{
+  width: 96%;
+  padding: 10px;
+  font-size: 16px;
+  resize: none;
+}
+
+.button-container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.book-btn{
+  padding: 10px;
+  width: 200px;
+  font-style: 16px;
+  border-radius: 5px;
+  background-color: #23a6f0;
+  color: white;
+  border: none;
+  cursor: pointer;
+  margin-top: 15px;
+}
+
+.book-btn:hover{
+  background-color: #005600;
+}
+
+@media(max-width:768px){
+  .booking-form{
+    flex-direction: column;
+  }
+
+  .form-group label{
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+
+  .textarea-group{
+    display: none;
+  }
+
+  .book-btn{
+    width: 100%;
+  }
+}
+
