@@ -6,14 +6,14 @@ function App() {
   const [error, setError] = useState("");
 
   const validateEmail = (email) => {
-    const regex = "^w+@[a-zA-Z_]+?.[a-zA-Z]{2,3}$"
+    const regex = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/; 
     return regex.test(email);
   };
 
   const handleEmailChange = (e) => {
     setEmail(e.target.value);
     if (!validateEmail(e.target.value)) {
-      setError("Please enter valid email");
+      setError("Please enter a valid email");
     } else {
       setError("");
     }
@@ -21,20 +21,21 @@ function App() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if(!validateEmail(email)){
-      setError("Please enter valid email");
-    }else{
+    if (!validateEmail(email)) {
+      setError("Please enter a valid email");
+    } else {
       setError("");
-      console.log("Form Submitted")
+      console.log("Form Submitted");
     }
-  }
+  };
+
   return (
-    <div className="booking-form-container" onSubmit={handleSubmit}>
+    <form className="booking-form-container" onSubmit={handleSubmit}>
       <h3 className="responsive-heading">Contact Us</h3>
       <h2 className="appointment-heading">Make an Appointment</h2>
       <div className="booking-form">
         <div className="form-group">
-          <label htmlFor="fullName">Name</label>
+          <label htmlFor="fullname">Name</label>
           <input
             type="text"
             id="fullname"
@@ -85,7 +86,7 @@ function App() {
           Book Appointment
         </button>
       </div>
-    </div>
+    </form>
   );
 }
 
